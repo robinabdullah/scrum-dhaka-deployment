@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  robinabdullah
+  namespace: demo
+spec:
+  selector:
+    matchLabels:
+      app: robinabdullah
+  template:
+    metadata:
+      labels:
+        app: robinabdullah
+    spec:
+      containers:
+        - name: robinabdullah
+          image: robinabdullah/scrum-dhaka:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
